@@ -1,0 +1,16 @@
+{
+    "wifi_ssid": "xxx",
+    "wifi_pass": "xxx",
+
+
+    "mqtt_broker": "xxx.xxx.xxx.xxx", 
+    "mqtt_port": 1883,
+    "mqtt_client_id": "fog_workplace1",
+    "mqtt_topic_operators": ["operator1", "operator2"],
+    "mqtt_topic_cloud": "workplace_1",
+    "mqtt_user": "",
+    "mqtt_password": "",
+    "api_token": "xxx",
+    "cloud_api":  "xxx"
+
+}

@@ -1,0 +1,23 @@
+{
+    "wifi_ssid": "xxx",
+    "wifi_pass": "xx",
+
+    "IMU_SERVICE": "xxxx",
+    "IMU_CHAR_READ": "xxxx",
+    "IMU_CHAR_WRITE": "xxxx",
+    "IMU_MAC_ADDRESS": "xxxx",
+    "WINDOW_SIZE": 2,
+
+    "register_data_mode": false,
+    "data_to_analyze": ["AccX","AccY","AccZ","GyroX","GyroY","GyroZ","GyroMag","AngX","AngY","AngZ","AngMag","MagX","MagY","MagZ","MagMag","MagX_norm","MagY_norm","MagZ_norm"],
+
+    "mqtt_broker": "xxx.xxx.xxx.xxx",
+    "mqtt_port": 1883,
+    "mqtt_client_id": "workers_1",
+    "mqtt_topic": "operator_1",
+    "mqtt_user": "",
+    "mqtt_password": ""
+
+}
+
+
