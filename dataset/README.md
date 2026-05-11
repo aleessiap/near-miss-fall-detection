@@ -1,5 +1,18 @@
 # Dataset
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Folder Structure](#folder-structure)
+- [Raw Recordings](#raw)
+- [Processed Features](#features)
+- [Experimental Protocol](#experimental-protocol)
+- [Hardware](#hardware)
+
+---
+
+# Overview 
+
 This folder contains the inertial dataset collected during the experimental campaign for near-miss fall detection.
 
 The data were acquired using a wearable IMU positioned at the sacral region while participants performed both normal Activities of Daily Living (ADLs) and controlled near-miss fall events under realistic outdoor conditions.
