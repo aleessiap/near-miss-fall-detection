@@ -1,15 +1,26 @@
 # Near-Miss Fall Detection with Edge AI Wearables
 
-This repository contains the dataset and embedded firmware associated with the paper:
-
-> **"An Edge AI Wearable System for Near-Miss Fall Detection"**
-
-The work presents a lightweight wearable framework for real-time near-miss fall detection using a single IMU and on-device machine learning inference.  
-The proposed system combines wearable sensing, embedded AI, and event-driven communication to enable privacy-aware and low-power monitoring on resource-constrained devices.
-
-The framework was evaluated on a dataset collected from 20 participants performing both Activities of Daily Living (ADLs) and controlled near-miss fall events under realistic outdoor conditions.
+<p align="center">
+  <img src="https://img.shields.io/badge/MicroPython-2B2728?style=for-the-badge&logo=micropython&logoColor=white" alt="MicroPython">
+  <img src="https://img.shields.io/badge/XGBoost-337AB7?style=for-the-badge&logo=xgboost&logoColor=white" alt="XGBoost">
+  <img src="https://img.shields.io/badge/MQTT-660066?style=for-the-badge&logo=mqtt&logoColor=white" alt="MQTT">
+  <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+</p>
 
 ---
+
+## Table of Contents
+
+- [About](#about)
+- [Repository Structure](#repository-structure)
+- [Folder Description](#folder-description)
+- [Hardware](#hardware)
+
+---
+
+## About
+
+This repository contains the dataset and embedded firmware associated with the paper:
 
 ## Repository Structure
 
