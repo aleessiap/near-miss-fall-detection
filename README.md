@@ -22,6 +22,14 @@
 
 This repository contains the dataset and embedded firmware associated with the paper:
 
+> **"An Edge AI Wearable System for Near-Miss Fall Detection"**
+
+The work presents a lightweight wearable framework for real-time near-miss fall detection using a single IMU and on-device machine learning inference.  
+The proposed system combines wearable sensing, embedded AI, and event-driven communication to enable privacy-aware and low-power monitoring on resource-constrained devices.
+
+The framework was evaluated on a dataset collected from 20 participants performing both Activities of Daily Living (ADLs) and controlled near-miss fall events under realistic outdoor conditions.
+
+
 ## Repository Structure
 
 ```text
