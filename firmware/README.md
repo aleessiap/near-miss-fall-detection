@@ -1,10 +1,32 @@
 # Firmware
 
+<p align="center">
+  <img src="https://img.shields.io/badge/MicroPython-2B2728?style=for-the-badge&logo=micropython&logoColor=white" alt="MicroPython">
+  <img src="https://img.shields.io/badge/XGBoost-337AB7?style=for-the-badge&logo=xgboost&logoColor=white" alt="XGBoost">
+  <img src="https://img.shields.io/badge/MQTT-660066?style=for-the-badge&logo=mqtt&logoColor=white" alt="MQTT">
+  <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
+  <img src="https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white" alt="ESP32">
+</p>
+
+---
+
+## Table of Contents
+
+- [Overview](#firmware)
+- [Repository Structure](#repository-structure)
+- [Edge Node](#edge-node-edge)
+- [Fog Layer](#fog-layer-fog)
+- [MQTT Broker](#mqtt-broker-test-mqtt-broker)
+- [Hardware](#hardware)
+- [MQTT Event Format](#mqtt-event-format)
+
+---
+
+# Overview 
+
 This repository contains the embedded software stack for a real-time near-miss fall detection system.
 
 The system acquires inertial data from a wearable IMU via Bluetooth Low Energy, performs on-device signal preprocessing and machine learning inference, and publishes detection events to an MQTT broker. A fog layer node subscribes to those events and forwards them to a cloud API.
-
----
 
 ## Repository Structure
 
