@@ -8,7 +8,7 @@ services:
     ports:
       # MQTT port
       - "1883:1883"
-      # WebSocket port (requires enabling in config)
+      # WebSocket port
       - "9001:9001"
     volumes:
       - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf

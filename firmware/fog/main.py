@@ -1,3 +1,7 @@
+# Fog node firmware (TinyS3, ESP32-S3): MQTT bridge between the edge-level
+# broker, which collects the events of the operators' edge boards, and the
+# cloud-level broker. Events are forwarded unchanged (coroutines/mqtt.py).
+
 import gc
 import json
 import sys
@@ -6,50 +10,33 @@ import uasyncio
 from coroutines.mqtt import mqtt_coro
 from lib.wifi_manager import WiFiManager
 
-# Configuration file
 _CFG_FILENAME = "config.json"
+_REQUIRED = ("wifi_ssid", "wifi_pass", "mqtt_broker", "mqtt_client_id",
+             "mqtt_topic_operators", "cloud_mqtt_broker")
 
-async def main_loop(cfg_dict: dict):
-    coro_handles = []
 
-    # Start the MQTT coroutine to handle incoming MQTT messages and send data to the cloud API
-    mqtt_handle = uasyncio.create_task(mqtt_coro(
-        cfg=cfg_dict
-    ))
-    coro_handles.append(mqtt_handle)
+def load_config():
+    try:
+        with open(_CFG_FILENAME) as f:
+            cfg = json.load(f)
+    except Exception as e:
+        print("main: error while reading config file:", e)
+        sys.exit()
+    missing = [k for k in _REQUIRED if k not in cfg]
+    if missing:
+        print("main: missing keys in config.json:", missing)
+        sys.exit()
+    return cfg
 
-    await uasyncio.Event().wait()
 
 if __name__ == "__main__":
-    # Enable garbage collector
     gc.enable()
-
-    # Load configuration file
-    cfg = {}
-
-    try:
-        with open(_CFG_FILENAME, 'r') as cfg_fp:
-            cfg = json.load(cfg_fp)
-            print("main: loaded config:\n", cfg)
-    except:
-        print("main: error while reading config file")
-        sys.exit()
-
-    # Establish WiFi connection and RTC sync
-    print("Connecting to WiFi and synchronizing RTC...")
+    cfg = load_config()
     wm = WiFiManager(cfg["wifi_ssid"], cfg["wifi_pass"])
-    wm.do_connect()
-    wm.sync_RTC()
-
-    # Run the control task
+    wm.do_connect()             # on failure the main loop keeps retrying
     try:
-        uasyncio.run(main_loop(cfg_dict=cfg))
-
+        uasyncio.run(mqtt_coro(cfg, wm))
     except KeyboardInterrupt:
-        print('Interrupted')
-
+        print("Interrupted")
     finally:
-        uasyncio.new_event_loop()  # Clear retained state
-
-
-    
+        uasyncio.new_event_loop()   # clear retained state

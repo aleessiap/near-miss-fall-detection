@@ -76,6 +76,11 @@ class Queue:
             raise QueueFull()
         self._put(val)
 
+    def peek(self):  # First item, left in the queue (added for this firmware).
+        if self.empty():
+            raise QueueEmpty()
+        return self._queue[0]
+
     def qsize(self):  # Number of items in the queue.
         return len(self._queue)
 

@@ -1,23 +1,32 @@
 {
-    "wifi_ssid": "xxx",
-    "wifi_pass": "xx",
+    "wifi_ssid": "YOUR_WIFI_SSID",
+    "wifi_pass": "YOUR_WIFI_PASSWORD",
 
-    "IMU_SERVICE": "xxxx",
-    "IMU_CHAR_READ": "xxxx",
-    "IMU_CHAR_WRITE": "xxxx",
-    "IMU_MAC_ADDRESS": "xxxx",
-    "WINDOW_SIZE": 2,
+    "IMU_SERVICE": "0000ffe5-0000-1000-8000-00805f9a34fb",
+    "IMU_CHAR_READ": "0000ffe4-0000-1000-8000-00805f9a34fb",
+    "IMU_CHAR_WRITE": "0000ffe9-0000-1000-8000-00805f9a34fb",
+    "IMU_MAC_ADDRESS": "YOUR_IMU_MAC_ADDRESS",
+
+    "ACQUISITION_MODE": "3.5Hz",
+    "SAMPLING_RATE_HZ": 3.5,
+    "SAMPLE_PERIOD_MS": 284,
+    "WINDOW_MS": 2000,
+    "STEP_MS": 1000,
+    "MIN_WINDOW_SAMPLES": 2,
+
+    "SENSOR_PERIOD_MS": 10.0716,
+    "SENSOR_CLOCK_RELAX_MS": 0.02,
 
     "register_data_mode": false,
-    "data_to_analyze": ["AccX","AccY","AccZ","GyroX","GyroY","GyroZ","GyroMag","AngX","AngY","AngZ","AngMag","MagX","MagY","MagZ","MagMag","MagX_norm","MagY_norm","MagZ_norm"],
+    "DEBUG_WINDOWS": false,
 
-    "mqtt_broker": "xxx.xxx.xxx.xxx",
+    "mqtt_broker": "YOUR_BROKER_ADDRESS",
     "mqtt_port": 1883,
     "mqtt_client_id": "workers_1",
     "mqtt_topic": "operator_1",
     "mqtt_user": "",
-    "mqtt_password": ""
-
+    "mqtt_password": "",
+    
+    "ntp_host": "pool.ntp.org",
+    "UNIX_EPOCH": false
 }
-
-

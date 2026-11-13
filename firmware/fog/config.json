@@ -1,16 +1,17 @@
 {
-    "wifi_ssid": "xxx",
-    "wifi_pass": "xxx",
+    "wifi_ssid": "YOUR_WIFI_SSID",
+    "wifi_pass": "YOUR_WIFI_PASSWORD",
 
-
-    "mqtt_broker": "xxx.xxx.xxx.xxx", 
+    "mqtt_broker": "YOUR_EDGE_BROKER_ADDRESS",
     "mqtt_port": 1883,
-    "mqtt_client_id": "fog_workplace1",
-    "mqtt_topic_operators": ["operator1", "operator2"],
-    "mqtt_topic_cloud": "workplace_1",
     "mqtt_user": "",
     "mqtt_password": "",
-    "api_token": "xxx",
-    "cloud_api":  "xxx"
+    "mqtt_client_id": "fog_workplace_1",
+    "mqtt_topic_operators": ["operator_1"],
 
+    "cloud_mqtt_broker": "YOUR_CLOUD_BROKER",
+    "cloud_mqtt_port": 1883,
+    "cloud_mqtt_user": "",
+    "cloud_mqtt_password": "",
+    "mqtt_topic_cloud": "workplace_1"
 }
